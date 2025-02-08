@@ -74,7 +74,6 @@ async fn main() {
     loop {
         interval.tick().await;
 
-        let coord = coord.clone();
         let http_client = http_client.clone();
         let influx = influx.clone();
 
@@ -114,7 +113,7 @@ async fn main() {
             tracing::info!("total {total} datapoints obtained ({actual_coord}). ({from} -> {to})");
 
             let series: Result<Vec<_>, _> = series
-                .into_iter()
+                .iter()
                 .map(|dp| {
                     DataPoint::builder("amecs-solar")
                         .tag("coord", actual_coord.to_string())
