@@ -10,7 +10,7 @@ futures = "0.3.31"
 influxdb2 = "0.5.2"
 itertools = "0.14.0"
 ordered-float = "5.0.0"
-reqwest = { version = "0.12.9", default-features = false, features = ["rustls-tls"] }
+reqwest = { version = "0.13.0", default-features = false, features = ["rustls"] }
 serde = { version = "1.0.215", features = ["derive"] }
 thiserror = "2.0.9"
 tokio = { version = "1.41.1", features = ["macros", "rt", "time"] }
